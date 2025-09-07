@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif  ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+  /* LIGHTMODE COLORS */
+  --color-bg-primary: #232625;
+  --color-bg-secondary: #171918;
+  --color-text: #ffffff;
+  --color-primary: #1a73e8;
+  --color-light-primary: #F6F5FF;
+  --font-size-primary: 18px;
+  --font-size-secondary: 16px;
+  --font-size-tertiary: 14px;
+  --icon-size-primary: 25px;
+  --icon-size-secondary: 18px;
+}
+
+[data-theme="dark"] {
+  /* DARKMODE COLORS */
+  --color-bg: #121212;
+  --color-text: #ffffff;
+  --color-primary: #8ab4f8;
+  --color-secondary: #1f1f1f;
+  --color-border: #333333;
+}
+
+ul, li, button, a{
+    text-decoration: none;
+    border: none;
+    background: none;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-secondary);
+}
+
+header{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* SIDE-NAV-CONTAINER */
+.nav-container {
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    padding: 10px;
+    justify-content: center;
+    background-color: var(--color-bg-primary);
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+}
+
+.nav-container.compress {
+    width: 100px;
+    transition: all 0.2s ease-in-out;
+}
+
+.side-nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: var(--color-bg-primary);
+}
+
+/* LOGO CONTAINER */
+.logo-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0 20px 15px;
+    white-space: nowrap;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    user-select: none;
+}
+
+.profile-container {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-size-primary);
+    display: flex;
+    align-items: center;
+    left: 100px;
+    position: fixed;
+}
+
+.profile-txt {
+    font-size: var(--font-size-secondary);
+    font-weight: 500;
+    color: var(--color-light-primary);
+    user-select: none;
+}
+ 
+/* ITEM CONTAINER */
+.item-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 10px;
+}
+
+.side-title {
+    font-size: var(--font-size-secondary);
+    font-weight: 400;
+    color: gray;
+    margin-left: 20px;
+    cursor: default;
+}
+
+.side-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    position: relative;
+    padding-left: 25px;
+}
+
+.side-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-primary);
+}
+
+.icon {
+    font-size: var(--icon-size-primary);
+    justify-content: center;
+    color: gray;
+}
+
+.side-txt {
+    width: 100%;
+    margin-left: 10px;
+    color: gray;
+    user-select: none;
+}
+
+/* TOGGLE BUTTONS */
+.toggle-right, .toggle-left {
+    visibility: hidden;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 55px;
+    right: -15px;
+    font-size: 25px;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    color: var(--color-bg-primary);
+    background-color: var(--color-text);
+    z-index: 1;
+}
+
+.toggle-left {
+    z-index: 3;
+    transition: none;
+}
+
+.nav-container:hover .toggle-right{
+    visibility: visible;
+    z-index: 2;
+}
+
+.side-item:hover {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: var(--color-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.side-item:hover .icon, .side-item:hover .side-txt, .side-item:hover .side-link{
+    color: var(--color-text);
+}
+
+.side-link:visited {
+    color: var(--color-text);
+}
+
+/* NAVCONTAINER COMPRESS */
+.nav-container.compress .side-txt {
+    display: none;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-container.compress .profile-container{
+    visibility: hidden;
+}
+
+.nav-container.compress .side-title {
+    opacity: 0;
+}
+
+/* MAIN-CONTENT */
+.main-container {
+    width: calc(100% - 250px);
+    height: 100vh;
+    left: 250px;
+    position: relative;
+    background-color: var(--color-bg-secondary);
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-container.compress ~ .main-container {
+    width: calc(100% - 100px);
+    left: 100px;
+}
+
+.about-me-container {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    color: var(--color-light-primary);
+}
