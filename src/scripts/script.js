@@ -1,4 +1,4 @@
-function sideBar() {
+function expandSideBar() {
     const toggleRightBtn = document.querySelector('.toggle-right');
     const toggleLeftBtn = document.querySelector('.toggle-left');
     const sideBar = document.querySelector('.nav-container');
@@ -15,4 +15,16 @@ function sideBar() {
     });
 }
 
-sideBar();
+function activeSideItem() {
+    const sideItems = document.querySelectorAll('.side-item');
+
+    sideItems.forEach( item => {
+        item.addEventListener('click', () => {
+            sideItems.forEach(item => item.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+}
+
+expandSideBar();
+activeSideItem();

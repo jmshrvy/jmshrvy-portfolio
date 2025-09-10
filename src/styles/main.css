@@ -149,6 +149,7 @@ img {
     display: flex;
     position: relative;
     padding-left: 25px;
+    border-radius: 10px;
 }
 
 .side-item:nth-child(4) {
@@ -238,6 +239,18 @@ img {
     display: none;
 }
 
+/* ACTIVE ITEM */
+.side-item.active {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: var(--color-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.side-item.active .icon, .side-item.active .side-txt, .side-item.active .side-link{
+    color: var(--color-text);
+}
+
 @media only screen and (max-width:1200px) {
     .nav-container {
         width: 100%;
@@ -306,7 +319,7 @@ img {
         left: 0;
     }
 
-    .about-me-container {
+    .info-container {
         width: 100%;
         height: 100vh;
         color: var(--color-light-primary);
