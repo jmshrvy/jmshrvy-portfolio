@@ -6,6 +6,7 @@
     position: relative;
     background-color: var(--color-bg-secondary);
     transition: all 0.2s ease-in-out;
+    scroll-snap-stop: always;
 }
 
 .nav-container.compress ~ .main-container {
