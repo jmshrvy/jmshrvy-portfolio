@@ -50,7 +50,10 @@ function slideUpBlock() {
 function loadingAnimation() {
     window.addEventListener("load", () => {
       const loader = document.getElementById("loading-animation");
-      loader.classList.add("hidden"); // fade out once page loads
+      // LOADING DURATION
+       setTimeout(() => {
+          loader.classList.add("hidden");
+        }, 1000);
     });
 }
 
