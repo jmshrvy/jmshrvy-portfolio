@@ -46,6 +46,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
     background-color: var(--color-bg-secondary);
 }
 
@@ -58,6 +59,38 @@ header{
 img {
     width: 100%;
     height: 100%;
+}
+
+/* LOADING ANIMATION  */
+#loading-animation {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #555;
+  border-top: 5px solid #00bcd4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hide loader smoothly */
+#loading-animation.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* SIDE-NAV-CONTAINER */
@@ -176,6 +209,38 @@ img {
     margin-left: 20px;
 }
 
+.side-item:hover {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: var(--color-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.side-item:hover .icon, .side-item:hover .side-txt, .side-item:hover .side-link{
+    color: var(--color-text);
+}
+
+.side-link:visited {
+    color: var(--color-text);
+}
+
+/* HIDE CONTACT ICON AND CONTENT IN WEB-VIEW */
+.side-item:nth-child(5), .info:nth-child(4) {
+    display: none;
+}
+
+/* ACTIVE ITEM */
+.side-item.active {
+    background-color: var(--color-primary);
+    border-radius: 10px;
+    color: var(--color-text);
+    transition: all 0.2s ease-in-out;
+}
+
+.side-item.active .icon, .side-item.active .side-txt, .side-item.active .side-link{
+    color: var(--color-text);
+}
+
 /* TOGGLE BUTTONS */
 .toggle-right, .toggle-left {
     visibility: hidden;
@@ -203,21 +268,6 @@ img {
     z-index: 2;
 }
 
-.side-item:hover {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-    color: var(--color-text);
-    transition: all 0.2s ease-in-out;
-}
-
-.side-item:hover .icon, .side-item:hover .side-txt, .side-item:hover .side-link{
-    color: var(--color-text);
-}
-
-.side-link:visited {
-    color: var(--color-text);
-}
-
 /* NAVCONTAINER COMPRESS */
 .nav-container.compress .side-txt {
     display: none;
@@ -233,28 +283,22 @@ img {
     opacity: 0;
 }
 
-/* HIDE CONTACT ICON AND CONTENT IN WEB-VIEW */
-.side-item:nth-child(5), .info:nth-child(4) {
-    display: none;
-}
-
-/* ACTIVE ITEM */
-.side-item.active {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-    color: var(--color-text);
-    transition: all 0.2s ease-in-out;
-}
-
-.side-item.active .icon, .side-item.active .side-txt, .side-item.active .side-link{
-    color: var(--color-text);
-}
-
+/* MAIN/INFO CONTAINER */
 .main-container {
-    height: 100%;
+    width: calc(100% - 250px);
+    height: 100vh;
+    left: 250px;
+    position: relative;
+    background-color: var(--color-bg-secondary);
+    transition: all 0.2s ease-in-out;
+    scroll-snap-stop: always;
 }
 
-/* INFO CONTAINER */
+.nav-container.compress ~ .main-container {
+    width: calc(100% - 100px);
+    left: 100px;
+}
+
 .info-container {
     width: 100%;
     height: 100%;

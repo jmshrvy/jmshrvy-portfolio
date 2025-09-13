@@ -17,6 +17,9 @@ function expandSideBar() {
 
 function activeSideItem() {
     const sideItems = document.querySelectorAll('.side-item');
+    const activeItem = document.getElementById('activeItem')
+
+    activeItem.classList.add('active');
 
     sideItems.forEach( item => {
         item.addEventListener('click', () => {
@@ -26,8 +29,9 @@ function activeSideItem() {
     });
 }
 
-function popUpProjects() {
-    const block = document.querySelectorAll('.projects-block');
+function slideUpBlock() {
+    const projectBlock = document.querySelectorAll('.projects-block');
+    const aboutCard = document.querySelectorAll('.about-card');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -37,11 +41,20 @@ function popUpProjects() {
           entry.target.classList.remove('show');
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.4 });
     
-    block.forEach(item => observer.observe(item));
+    projectBlock.forEach(item => observer.observe(item));
+    aboutCard.forEach(item => observer.observe(item));
 }
 
+function loadingAnimation() {
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loading-animation");
+      loader.classList.add("hidden"); // fade out once page loads
+    });
+}
+
+loadingAnimation();
 expandSideBar();
 activeSideItem();
-popUpProjects();
+slideUpBlock();
