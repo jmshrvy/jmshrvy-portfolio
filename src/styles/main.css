@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 :root {
   /* LIGHTMODE COLORS */
   --color-bg-primary: #232625;
@@ -85,12 +81,23 @@ img {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+#content.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
 
-/* Hide loader smoothly */
+#content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* HIDE LOADING ANIMATION */
 #loading-animation.hidden {
     opacity: 0;
     visibility: hidden;
 }
+
 
 /* SIDE-NAV-CONTAINER */
 .nav-container {
@@ -208,14 +215,20 @@ img {
     margin-left: 20px;
 }
 
-.side-item:hover {
+/* ACTIVE SIDE LINK  */
+
+.side-link:hover, .side-link.active {
     background-color: var(--color-primary);
     border-radius: 10px;
     color: var(--color-text);
     transition: all 0.2s ease-in-out;
 }
 
-.side-item:hover .icon, .side-item:hover .side-txt, .side-item:hover .side-link{
+.side-link.active .icon, .side-link.active .side-txt{
+    color: var(--color-text);
+}
+
+.side-link:hover .icon, .side-link:hover .side-txt{
     color: var(--color-text);
 }
 
@@ -226,18 +239,6 @@ img {
 /* HIDE CONTACT ICON AND CONTENT IN WEB-VIEW */
 .side-item:nth-child(5), .info:nth-child(4) {
     display: none;
-}
-
-/* ACTIVE ITEM */
-.side-item.active {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-    color: var(--color-text);
-    transition: all 0.2s ease-in-out;
-}
-
-.side-item.active .icon, .side-item.active .side-txt, .side-item.active .side-link{
-    color: var(--color-text);
 }
 
 /* TOGGLE BUTTONS */

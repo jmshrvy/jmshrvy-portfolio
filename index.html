@@ -27,8 +27,8 @@
                 </div>
                 <ul class="item-container">
                     <span class="side-title">MENU</span>
-                    <li class="side-item" id="activeItem">
-                        <a href="#about-me" class="side-link">
+                    <li class="side-item active">
+                        <a href="#about-me" class="side-link" id="activeItem">
                             <i class="bx bxs-meh-alt icon"></i>
                             <span class="side-txt">About</span>
                         </a>
@@ -88,14 +88,10 @@
             <i class="bx bxs-chevron-left toggle-left"></i>
         </header>
     </nav>
-
-    <div id="loading-animation">
-        <div class="spinner"></div>
-    </div>
     
     <!-- CONTENTS -->
-     <main class="main-container" id="about-me">
-         <section class="section-container">
+     <main class="main-container">
+         <section class="section-container hidden" id="about-me">
          <div class="info-container">
              <!-- ABOUT ME  -->
              <div class="info about">
@@ -110,9 +106,13 @@
                         <span class="college">Bulacan State University - Sarmiento Campus</span>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="section-container" id="projects">
+            <div class="info-container">
                 <!-- PROJECTS -->
-                <div class="info " id="projects">
+                <div class="info">
                     <h1>Projects</h1>
                     <div class="projects-block">
                         <a href="https://velodrop.vercel.app/" target="_blank" class="project-link">
@@ -131,23 +131,39 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="section-container" id="skills">
+            <div class="info-container">
                 <!-- SKILLS -->
-                <div class="info" id="skills">
+                <div class="info">
                     <h1>Skills</h1>
                     <div class="projects-block">
                         <a href="https://velodrop.vercel.app/" target="_blank" class="project-link">
-                            <img src="src/img/calculator.logo.png" alt="Project 1" class="project-img">
+                            <img src="src/img/velodropLogo.png" alt="Project 1" class="project-img">
                         </a>
                         <div class="project-txt-container">
                             <span class="project-txt">VeloDrop</span>
                         </div>
                     </div>
+                    <div class="projects-block">
+                        <a href="https://shinkai-basic-calculator.vercel.app/" target="_blank" class="project-link">
+                            <img src="src/img/calculator.logo.png" alt="Project 1" class="project-img">
+                        </a>
+                        <div class="project-txt-container">
+                            <span class="project-txt">Basic Calculator</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            </div>
         </section>
-    </main>
+
+        <div id="loading-animation">
+            <div class="spinner"></div>
+        </div>
+     </main>
     <script src="src/scripts/script.js"></script>
     <script src="src/scripts/bg-animation.js"></script>
 </body>

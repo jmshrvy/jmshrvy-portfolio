@@ -15,20 +15,6 @@ function expandSideBar() {
     });
 }
 
-function activeSideItem() {
-    const sideItems = document.querySelectorAll('.side-item');
-    const activeItem = document.getElementById('activeItem')
-
-    activeItem.classList.add('active');
-
-    sideItems.forEach( item => {
-        item.addEventListener('click', () => {
-            sideItems.forEach(item => item.classList.remove('active'));
-            item.classList.add('active');
-        });
-    });
-}
-
 function slideUpBlock() {
     const projectBlock = document.querySelectorAll('.projects-block');
     const aboutCard = document.querySelectorAll('.about-card');
@@ -41,7 +27,7 @@ function slideUpBlock() {
           entry.target.classList.remove('show');
         }
       });
-    }, { threshold: 0.4 });
+    }, { threshold: 0.5 });
     
     projectBlock.forEach(item => observer.observe(item));
     aboutCard.forEach(item => observer.observe(item));
@@ -50,14 +36,46 @@ function slideUpBlock() {
 function loadingAnimation() {
     window.addEventListener("load", () => {
       const loader = document.getElementById("loading-animation");
+      const content = document.getElementById("content");
+
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+
       // LOADING DURATION
        setTimeout(() => {
-          loader.classList.add("hidden");
-        }, 1000);
-    });
+          loader.classList.remove("hidden");
+          content.classList.add("show");
+        }, 600);
+      });
+}
+
+function activeScrollSection() {
+    const sections = document.querySelectorAll("section");
+    const navItem = document.querySelectorAll("nav header a");
+    const activeItem = document.getElementById("activeItem");
+
+    activeItem.classList.add('active');
+
+    window.onscroll = () => {
+        sections.forEach(section => {
+            const top = window.scrollY;
+            let offSet = section.offsetTop - 150;
+            let height = section.offsetHeight;
+            let id = section.getAttribute("id");
+
+            if (top >= offSet && top < offSet + height) {
+                navItem.forEach(links => {
+                    links.classList.remove('active');
+                    activeItem.classList.remove('active');
+                    document.querySelector('nav header a[href*=' + id + ']').classList.add('active');
+                })
+            }
+
+        });
+    };
 }
 
 loadingAnimation();
 expandSideBar();
-activeSideItem();
 slideUpBlock();
+activeScrollSection();

@@ -10,6 +10,7 @@
 
 .about {
     width: 100%;
+    min-height: 100vh;
     height: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -44,11 +45,11 @@
 }
 
 .about-card.show {
-    animation: popUp 0.3s linear forwards;
+    animation: popUp 0.6s linear forwards;
 }
 
 .about-card.show:nth-child(2) {
-    animation: popRight 0.3s linear forwards;
+    animation: popRight 0.4s linear forwards;
     animation-delay: 0.5s;
 }
 

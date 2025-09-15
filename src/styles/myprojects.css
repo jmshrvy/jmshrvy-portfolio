@@ -14,13 +14,8 @@
 .projects-block.show {
     opacity: 1;
     transform: scale(1);
-    animation: fadeSlideIn 0.2s linear forwards;
-    transition: all 0.2s ease-out;
-}
-
-.projects-block.show:nth-child(3) {
+    animation: fadeSlideIn 0.4s linear forwards;
     transition: all 0.4s ease-out;
-    animation: fadeslideIn 0.4s linear forwards;
 }
 
 @keyframes fadeSlideIn {
