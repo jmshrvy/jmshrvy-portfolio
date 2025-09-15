@@ -76,4 +76,16 @@
 }
 
 @media only screen and (max-width:900px) {
+    .introduction {
+        width: 100%;
+        display: flex;
+        font-size: 14px;
+        flex-flow: row wrap;
+        z-index: 2;
+    }
+
+    .education {
+        width: 100%;
+        z-index: 1;
+    }
 }

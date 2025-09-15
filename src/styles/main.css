@@ -21,15 +21,6 @@
   --icon-size-secondary: 18px;
 }
 
-[data-theme="dark"] {
-  /* DARKMODE COLORS */
-  --color-bg: #121212;
-  --color-text: #ffffff;
-  --color-primary: #8ab4f8;
-  --color-secondary: #1f1f1f;
-  --color-border: #333333;
-}
-
 ul, li, button, a{
     text-decoration: none;
     border: none;
@@ -81,10 +72,11 @@ img {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
 #content.hidden {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 #content.show {
@@ -109,7 +101,7 @@ img {
     justify-content: center;
     background-color: var(--color-bg-primary);
     transition: all 0.2s ease-in-out;
-    z-index: 1;
+    z-index: 9999;
 }
 
 .nav-container.compress {
@@ -237,7 +229,7 @@ img {
 }
 
 /* HIDE CONTACT ICON AND CONTENT IN WEB-VIEW */
-.side-item:nth-child(5), .info:nth-child(4) {
+.side-item:nth-child(5), .section-container:nth-child(4) {
     display: none;
 }
 
@@ -351,11 +343,12 @@ img {
         margin-bottom: 0px;
     }
 
-    .side-item:nth-child(5), .info:nth-child(4) {
+    .side-item:nth-child(5), .section-container:nth-child(4) {
         display: flex;
     }
 
     .side-link {
+        padding-left: 0px;
         justify-content: center;
     }
 

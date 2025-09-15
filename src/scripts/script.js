@@ -18,6 +18,11 @@ function expandSideBar() {
 function slideUpBlock() {
     const projectBlock = document.querySelectorAll('.projects-block');
     const aboutCard = document.querySelectorAll('.about-card');
+    const isMobile = window.innerWidth < 768;
+    const observerOptions = {
+      root: null,
+      threshold: isMobile ? 0.6 : 0.3 // 60% ON MOBILE, 30% ON DESKTOP
+    };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -27,7 +32,7 @@ function slideUpBlock() {
           entry.target.classList.remove('show');
         }
       });
-    }, { threshold: 0.5 });
+    }, { ...observerOptions });
     
     projectBlock.forEach(item => observer.observe(item));
     aboutCard.forEach(item => observer.observe(item));
@@ -45,7 +50,7 @@ function loadingAnimation() {
        setTimeout(() => {
           loader.classList.remove("hidden");
           content.classList.add("show");
-        }, 600);
+        }, 3000);
       });
 }
 
@@ -59,7 +64,7 @@ function activeScrollSection() {
     window.onscroll = () => {
         sections.forEach(section => {
             const top = window.scrollY;
-            let offSet = section.offsetTop - 150;
+            let offSet = section.offsetTop - 200;
             let height = section.offsetHeight;
             let id = section.getAttribute("id");
 
@@ -75,7 +80,7 @@ function activeScrollSection() {
     };
 }
 
-loadingAnimation();
 expandSideBar();
+loadingAnimation();
 slideUpBlock();
 activeScrollSection();
