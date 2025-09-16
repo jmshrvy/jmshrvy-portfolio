@@ -58,8 +58,13 @@ function activeScrollSection() {
     const sections = document.querySelectorAll("section");
     const navItem = document.querySelectorAll("nav header a");
     const activeItem = document.getElementById("activeItem");
+    const isMobile = window.innerWidth < 768;
 
-    activeItem.classList.add('active');
+    if (isMobile) {
+        activeItem.classList.remove('active');
+    } else {
+        activeItem.classList.add('active');
+    }
 
     window.onscroll = () => {
         sections.forEach(section => {
@@ -78,6 +83,21 @@ function activeScrollSection() {
 
         });
     };
+
+    // REMOVE THE HOVER STYLE ON MOBILE
+    document.addEventListener("touchstart", () => {
+      try {
+        for (let styleSheet of document.styleSheets) {
+          for (let i = styleSheet.cssRules.length - 1; i >= 0; i--) {
+            if (styleSheet.cssRules[i].selectorText?.includes(":hover")) {
+              styleSheet.deleteRule(i);
+            }
+          }
+        }
+      } catch (err) {
+        console.log("Hover cleanup skipped:", err);
+      }
+    }, { once: true });
 }
 
 expandSideBar();

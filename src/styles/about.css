@@ -4,7 +4,7 @@
     height: 100%;
     display: flex;
     flex-flow: column wrap;
-    padding: 40px;
+    padding: 10px 40px 40px 40px;
     color: var(--color-light-primary);
 }
 
