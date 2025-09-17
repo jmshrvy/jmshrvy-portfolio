@@ -1,0 +1,24 @@
+.skills {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.left {
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.right {
+    width: 48%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
