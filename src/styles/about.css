@@ -38,7 +38,7 @@
     padding: 30px;
     transition: 0.4s ease-in-out;
     opacity: 0;
-    background: var(--color-bg-primary);
+    background: var(--color-bg-secondary-half);
     border-radius: 10px;
 }
 
