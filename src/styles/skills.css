@@ -5,6 +5,7 @@
     flex-flow: row wrap;
     justify-content: space-around;
     gap: 10px;
+    margin-left: 10px;
 }
 
 .left-skills {

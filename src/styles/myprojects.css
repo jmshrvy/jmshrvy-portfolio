@@ -1,20 +1,21 @@
 .projects {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     justify-content: space-between;
     position: relative;
+    margin-left: 10px;
+    gap: 20px;
 }
 
 .projects-block {
-    width: 33%;
+    width: 50%;
     height: 250px;
     display: flex;
-    flex-flow: row wrap;
-    position: relative;
+    flex-flow: column wrap;
     opacity: 0;
-    gap: 50px;
+    gap: 20%;
     margin-top: 20px;
     justify-content: center;
 }
@@ -42,25 +43,21 @@
   }
 }
 .project-img-container {
-    width: 250px;
-    height: 250px;
-}
-.project-link {
-    width: 250px;
+    width: 500px;
     height: 250px;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 20px;
 }
 
 .project-txt-container {
     width: 70%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     padding: 20px;
     border-radius: 20px;
 }
@@ -69,31 +66,27 @@
     color: white;
 }
 
-/* .projects-block:hover {
-    transform: scale(0.9);
-    transition: all 0.2s ease-in-out;
+.project-img-container:hover {
     border: 2px solid dodgerblue;
     border-radius: 20px;
-} */
+}
 
 @media only screen and (max-width:900px) {
     .projects {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
         position: relative;
-        text-align: center;
+        margin-left: 0px;
+        margin-top: -30px;
+        gap: 10px;
     }
 
     .projects-block {
         width: 300px;
         height: 100%;
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: row wrap;
         position: relative;
-        align-items: center;
         justify-content: center;
     }
 
@@ -103,9 +96,11 @@
     }
 
     .project-img-container {
-        width: 150px;
+        width: 400px;
         height: 150px;
         display: flex;
+        justify-content: center;
+        
     }
 
     .project-img {
@@ -116,11 +111,20 @@
 
     .project-txt-container {
         width: 100%;
-        height: 50px;
+        height: 100%;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        padding: 20px;
+        text-align: justify;
+        border-radius: 20px;
+    }
+
+    .project-name {
+        margin: 20px;
+    }
+
+    .project-img-container:hover {
+        border: none;
         border-radius: 20px;
     }
 }
