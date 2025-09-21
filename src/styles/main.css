@@ -75,13 +75,12 @@ img {
   to { transform: rotate(360deg); }
 }
 
-#content.hidden {
+.content.hidden {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 2s ease, transform 2s ease;
+    visibility: hidden;
 }
 
-#content.show {
+.content.show {
     opacity: 1;
     visibility: visible;
 }
@@ -268,7 +267,7 @@ img {
 }
 
 /* HIDE CONTACT ICON AND CONTENT IN WEB-VIEW */
-.side-item:nth-child(6), .section-container:nth-child(6) {
+.side-item:nth-child(6), .section-container:nth-child(7) {
     display: none;
 }
 
@@ -346,6 +345,12 @@ img {
 }
 
 @media only screen and (max-width:1200px) {
+    /* LOADING ANIMATION  */
+    #loading-animation {
+        position: absolute;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+
     /* SECTION HEADER  */
     .section-title {
         font-size: 25px;
@@ -405,7 +410,7 @@ img {
         margin-bottom: 0px;
     }
 
-    .side-item:nth-child(6), .section-container:nth-child(6) {
+    .side-item:nth-child(6), .section-container:nth-child(7) {
         display: flex;
     }
 

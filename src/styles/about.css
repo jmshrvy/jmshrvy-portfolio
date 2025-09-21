@@ -66,8 +66,8 @@
 }
 
 .about-card.show:nth-child(2), .about-card.show:nth-child(4) {
-    animation: popRight 0.4s linear forwards;
-    animation-delay: 0.5s;
+    animation: popRight 0.5s linear forwards;
+    animation-delay: 0.4s;
 }
 
 @keyframes popUp {

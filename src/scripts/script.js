@@ -2,6 +2,7 @@ function expandSideBar() {
     const toggleRightBtn = document.querySelector('.toggle-right');
     const toggleLeftBtn = document.querySelector('.toggle-left');
     const sideBar = document.querySelector('.nav-container');
+    const isMobile = window.innerWidth < 768;
 
     toggleRightBtn.addEventListener('click', () => {
         sideBar.classList.toggle('compress');
@@ -13,6 +14,10 @@ function expandSideBar() {
         sideBar.classList.toggle('compress');
         toggleLeftBtn.style.visibility = 'hidden';
     });
+
+    if (isMobile) {
+        sideBar.classList.add('compress');
+    }
 }
 
 function slideUpBlock() {
@@ -40,17 +45,17 @@ function slideUpBlock() {
 
 function loadingAnimation() {
     window.addEventListener("load", () => {
-      const loader = document.getElementById("loading-animation");
-      const content = document.getElementById("content");
+      const loader = document.getElementById('loading-animation');
+      const content = document.querySelector('.content');
 
-        loader.style.opacity = "0";
-        loader.style.visibility = "hidden";
+      content.classList.add("hidden");
 
       // LOADING DURATION
        setTimeout(() => {
-          loader.classList.remove("hidden");
-          content.classList.add("show");
-        }, 3000);
+         loader.classList.add("hidden");
+         content.classList.remove("hidden");
+         content.classList.add("show");
+        }, 400);
       });
 }
 
