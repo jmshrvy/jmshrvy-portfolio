@@ -16,22 +16,7 @@
     justify-content: space-around;
     gap: 10px;
     margin-left: 10px;
-}
-
-.left {
-    width: 50%;
-    min-height: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 20px;
-}
-
-.right {
-    width: 48%;
-    min-height: 100%;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 20px;
+    position: relative;
 }
 
 .about-card {
@@ -41,25 +26,6 @@
     opacity: 0;
     background: var(--color-bg-secondary-half);
     border-radius: 10px;
-}
-
-.introduction {
-    width: 100%;
-    height: 450px;
-    display: flex;
-    flex-flow: row wrap;
-    z-index: 2;
-}
-
-.education {
-    width: 100%;
-    height: 200px;
-    z-index: 1;
-}
-
-.about-description {
-    text-align: justify;
-    margin-bottom: 10px;
 }
 
 .about-card.show {
@@ -93,6 +59,182 @@
     }
 }
 
+/* ABOUT-ME SECTION */
+.left {
+    width: 50%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.introduction {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px;
+    z-index: 2;
+}
+
+.about-description {
+    font-size: var(--font-size-secondary);
+    text-align: justify;
+}
+
+/* EDUCATION & EXP SECTION  */
+.right {
+    width: 48%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 20px;
+}
+
+.education {
+    width: 100%;
+    height: 215px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: baseline;
+    gap: 10px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.educ-icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    align-content: center;
+}
+
+.exp-icon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    align-content: center;
+}
+
+.education-title-container, .exp-title-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.education-info, .exp-info {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    position: relative;
+}
+
+.bsu-logo-container, .dilg-logo-container {
+    width: 50px;
+    height: 300px;
+    margin-right: 15px;
+}
+
+.school-logo, .exp-logo {
+    width: 50px;
+    height: 50px;
+}
+
+.college-course, .work-position {
+    font-size: var(--font-size-primary);
+    font-weight: 500;
+}
+
+.college-name, .work-place {
+    font-size: var(--font-size-secondary);
+    font-weight: 300;
+}
+
+.year-container {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.college-year, .work-year {
+    font-size: var(--font-size-tertiary);
+    opacity: 0.6;
+}
+
+.bottom {
+    width: 99%;
+    height: 200px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.message-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    background: var(--color-bg-secondary-half);
+    border-radius: 10px;
+    padding: 40px;
+    position: relative;
+    gap: 20px;
+}
+
+.message-title-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.message-icon-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.message-link {
+    color: white;
+}
+
+.message-icon {
+    font-size: 40px;
+}
+
+.message-icon:hover {
+    color: var(--color-primary);
+}
+
+.message-link:visited {
+    color: white;
+    text-decoration: none;
+}
+
 @media only screen and (max-width:900px) {
     .about {
         width: 100%;
@@ -116,6 +258,7 @@
 
     .right {
         width: 100%;
+        height: 100%;
         font-size: 14px;
         z-index: 1;
     }
@@ -124,12 +267,87 @@
         font-size: 12px;
     }
 
+    .introduction {
+        padding: 30px;
+    }
+
     .education {
-        height: 100px;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
         padding: 20px;
     }
 
-    .college {
-        font-size: 11px;
+    .education:nth-child(1) {
+        height: 230px;
+    }
+
+    .education:nth-child(2) {
+        height: 190px;
+    }
+
+    .educ-icon {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 40px;
+        align-content: center;
+    }
+
+    .exp-icon {
+        display: flex;
+        width: 40px;
+        height: 40px;
+        font-size: 35px;
+        align-content: center;
+    }
+
+    .education-title-container, .exp-title-container {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 5px;
+        position: relative;
+    }
+
+    .education-info, .exp-info {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        position: relative;
+    }
+
+    .bsu-logo-container, .dilg-logo-container {
+        width: 35px;
+        height: 300px;
+        margin-right: 15px;
+        align-items: center;
+        position: relative;
+    }
+
+    .school-logo, .exp-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .college-course, .work-position {
+        font-size: var(--font-size-secondary);
+        font-weight: 500;
+    }
+
+    .college-name, .work-place {
+        width: 200px;
+        display: flex;
+        flex-flow: row wrap;
+        font-size: var(--font-size-tertiary);
+        font-weight: 300;
+    }
+
+    .bottom {
+        display: none;
     }
 }

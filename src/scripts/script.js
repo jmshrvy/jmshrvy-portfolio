@@ -20,9 +20,13 @@ function expandSideBar() {
     }
 }
 
-function slideUpBlock() {
+function cardObserver() {
     const projectBlock = document.querySelectorAll('.projects-block');
     const aboutCard = document.querySelectorAll('.about-card');
+    const leftSkillCard = document.querySelectorAll('.left-skill-card');
+    const rightSkillCard = document.querySelectorAll('.right-skill-card');
+    const progressBar = document.querySelectorAll('.bar-percent-container');
+    const percentBar = document.querySelectorAll('.bar-percentage');
     const isMobile = window.innerWidth < 768;
     const observerOptions = {
       root: null,
@@ -41,6 +45,10 @@ function slideUpBlock() {
     
     projectBlock.forEach(item => observer.observe(item));
     aboutCard.forEach(item => observer.observe(item));
+    leftSkillCard.forEach(item => observer.observe(item));
+    rightSkillCard.forEach(item => observer.observe(item));
+    progressBar.forEach(item => observer.observe(item));
+    percentBar.forEach(item => observer.observe(item));
 }
 
 function loadingAnimation() {
@@ -107,5 +115,5 @@ function activeScrollSection() {
 
 expandSideBar();
 loadingAnimation();
-slideUpBlock();
+cardObserver();
 activeScrollSection();
