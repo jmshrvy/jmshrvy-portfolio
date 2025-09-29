@@ -23,7 +23,9 @@ function expandSideBar() {
 function cardObserver() {
     const projectBlock = document.querySelectorAll('.projects-block');
     const certBlock = document.querySelectorAll('.cert-block');
-    const aboutCard = document.querySelectorAll('.about-card');
+    const rightCard = document.querySelectorAll('.right-card');
+    const leftCard = document.querySelectorAll('.left-card');
+    const bottomCard = document.querySelectorAll('.message-block');
     const leftSkillCard = document.querySelectorAll('.left-skill-card');
     const rightSkillCard = document.querySelectorAll('.right-skill-card');
     const progressBar = document.querySelectorAll('.bar-percent-container');
@@ -31,7 +33,7 @@ function cardObserver() {
     const isMobile = window.innerWidth < 768;
     const observerOptions = {
       root: null,
-      threshold: isMobile ? 0.6 : 0.3 // 60% ON MOBILE, 30% ON DESKTOP
+      threshold: isMobile ? 0.6 : 0.5 // 60% ON MOBILE, 30% ON DESKTOP
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -46,7 +48,9 @@ function cardObserver() {
     
     projectBlock.forEach(item => observer.observe(item));
     certBlock.forEach(item => observer.observe(item));
-    aboutCard.forEach(item => observer.observe(item));
+    rightCard.forEach(item => observer.observe(item));
+    leftCard.forEach(item => observer.observe(item));
+    bottomCard.forEach(item => observer.observe(item));
     leftSkillCard.forEach(item => observer.observe(item));
     rightSkillCard.forEach(item => observer.observe(item));
     progressBar.forEach(item => observer.observe(item));

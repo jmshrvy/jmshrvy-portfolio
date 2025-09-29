@@ -19,7 +19,7 @@
     position: relative;
 }
 
-.about-card {
+.left-card, .right-card {
     height: 100%;
     padding: 30px;
     transition: 0.4s ease-in-out;
@@ -28,13 +28,20 @@
     border-radius: 10px;
 }
 
-.about-card.show {
-    animation: popUp 0.6s linear forwards;
+.left-card.show {
+    animation: popUp 0.5s linear forwards;
 }
 
-.about-card.show:nth-child(2), .about-card.show:nth-child(4) {
+.right-card.show {
     animation: popRight 0.5s linear forwards;
-    animation-delay: 0.4s;
+}
+
+.right-card.show:nth-child(1) {
+    animation-delay: 0.3s;
+}
+
+.right-card.show:nth-child(2) {
+    animation-delay: 0.6s;
 }
 
 @keyframes popUp {
@@ -173,6 +180,7 @@
     opacity: 0.6;
 }
 
+/* BOTTOM  */
 .bottom {
     width: 99%;
     height: 200px;
@@ -197,7 +205,12 @@
     border-radius: 10px;
     padding: 40px;
     position: relative;
+    opacity: 0;
     gap: 20px;
+}
+
+.message-block.show {
+    animation: popUp 0.6s linear forwards;
 }
 
 .message-title-container {

@@ -6,7 +6,7 @@
     justify-content: space-between;
     position: relative;
     margin-left: 10px;
-    gap: 20px;
+    gap: 40px;
 }
 
 .projects-block {
@@ -54,21 +54,59 @@
     border-radius: 20px;
 }
 
+.project-name {
+    font-size: 25px;
+}
+
 .project-txt-container {
     width: 70%;
     display: flex;
     flex-flow: column wrap;
     padding: 20px;
     border-radius: 20px;
+    gap: 10px;
 }
 
 .project-txt {
-    color: white;
+    color: var(--text-color-primary);
 }
 
-.project-img-container:hover {
-    border: 2px solid dodgerblue;
-    border-radius: 20px;
+.project-link {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    background-color: var(--color-primary);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: var(--text-color-primary);
+    transition: all 0.1s ease-in-out;
+}
+
+.project-link:hover {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 10px 0px var(--color-primary);
+}
+
+.tech-used-container {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+}
+
+.tech-used {
+    width: auto;
+    height: 25px;
+    display: flex;
+    padding: 10px;
+    background-color: var(--color-bg-secondary);
+    font-size: 13px;
+    align-items: center;
+    border-radius: 5px;
 }
 
 @media only screen and (max-width:900px) {
@@ -79,6 +117,9 @@
         margin-left: 0px;
         margin-top: -30px;
         gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .projects-block {
@@ -90,13 +131,16 @@
         justify-content: center;
     }
 
-    .project-link {
-        width: 250px;
-        height: 150px;
+    .projects-block.show:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .projects-block.show:nth-child(3) {
+        animation-delay: 0.2s;
     }
 
     .project-img-container {
-        width: 400px;
+        width: 100%;
         height: 150px;
         display: flex;
         justify-content: center;
@@ -105,6 +149,7 @@
 
     .project-img {
         width: 100%;
+        height: 150px;
         object-fit: fill;
         border-radius: 20px;
     }
@@ -115,12 +160,21 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        text-align: justify;
         border-radius: 20px;
+        padding-top: 0px;
+    }
+
+    .project-txt {
+        text-align: justify;
     }
 
     .project-name {
         margin: 20px;
+    }
+
+    .tech-used-container {
+        justify-content: center;
+        gap: 10px;
     }
 
     .project-img-container:hover {
