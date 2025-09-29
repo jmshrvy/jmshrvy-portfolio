@@ -22,6 +22,7 @@ function expandSideBar() {
 
 function cardObserver() {
     const projectBlock = document.querySelectorAll('.projects-block');
+    const certBlock = document.querySelectorAll('.cert-block');
     const aboutCard = document.querySelectorAll('.about-card');
     const leftSkillCard = document.querySelectorAll('.left-skill-card');
     const rightSkillCard = document.querySelectorAll('.right-skill-card');
@@ -44,6 +45,7 @@ function cardObserver() {
     }, { ...observerOptions });
     
     projectBlock.forEach(item => observer.observe(item));
+    certBlock.forEach(item => observer.observe(item));
     aboutCard.forEach(item => observer.observe(item));
     leftSkillCard.forEach(item => observer.observe(item));
     rightSkillCard.forEach(item => observer.observe(item));
