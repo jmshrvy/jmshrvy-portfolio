@@ -249,6 +249,10 @@
 }
 
 @media only screen and (max-width:900px) {
+    .info-container {
+        padding: 10px 30px 30px 30px;
+    }
+
     .about {
         width: 100%;
         height: 100%;

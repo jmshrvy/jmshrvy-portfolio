@@ -33,7 +33,7 @@ function cardObserver() {
     const isMobile = window.innerWidth < 768;
     const observerOptions = {
       root: null,
-      threshold: isMobile ? 0.6 : 0.5 // 60% ON MOBILE, 30% ON DESKTOP
+      threshold: isMobile ? 0.5 : 0.5 // 60% ON MOBILE, 50% ON DESKTOP
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -88,7 +88,7 @@ function activeScrollSection() {
     window.onscroll = () => {
         sections.forEach(section => {
             const top = window.scrollY;
-            let offSet = section.offsetTop - 200;
+            let offSet = section.offsetTop - 500;
             let height = section.offsetHeight;
             let id = section.getAttribute("id");
 
