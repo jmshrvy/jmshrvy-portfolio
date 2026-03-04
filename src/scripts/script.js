@@ -59,18 +59,23 @@ function cardObserver() {
 
 function loadingAnimation() {
     window.addEventListener("load", () => {
-      const loader = document.getElementById('loading-animation');
-      const content = document.querySelector('.content');
+        const loader = document.getElementById('loading-animation');
+        const content = document.querySelector('.content');
 
-      content.classList.add("hidden");
+        // DISABLE THE SCROLL WITHIN THE LOADING 
+        document.body.classList.add("no-scroll");
 
-      // LOADING DURATION
-       setTimeout(() => {
-         loader.classList.add("hidden");
-         content.classList.remove("hidden");
-         content.classList.add("show");
+        content.classList.add("hidden");
+
+        setTimeout(() => {
+            loader.classList.add("hidden");
+            content.classList.remove("hidden");
+            content.classList.add("show");
+
+            document.body.classList.remove("no-scroll");
+
         }, 400);
-      });
+    });
 }
 
 function activeScrollSection() {
