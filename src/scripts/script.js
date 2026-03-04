@@ -62,8 +62,12 @@ function loadingAnimation() {
         const loader = document.getElementById('loading-animation');
         const content = document.querySelector('.content');
 
-        // DISABLE THE SCROLL WITHIN THE LOADING 
+        // SAVE SCROLL POSITION
+        const scrollY = window.scrollY;
+
+        // LOCK SCROLL
         document.body.classList.add("no-scroll");
+        document.body.style.top = `-${scrollY}px`;
 
         content.classList.add("hidden");
 
@@ -73,6 +77,9 @@ function loadingAnimation() {
             content.classList.add("show");
 
             document.body.classList.remove("no-scroll");
+            document.body.style.top = "";
+
+            window.scrollTo(0, scrollY);
 
         }, 400);
     });
