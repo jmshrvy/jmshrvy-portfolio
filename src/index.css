@@ -856,10 +856,11 @@ header .dark-light-switch-container{
 
 @media(max-width: 768px){
     .grid-container {
+        height: 100dvh;
         grid-template-rows: auto auto;
         grid-template-areas: 
-            "content content content"
-            "side side side";
+            "content"
+            "side";
         gap: 0;
         padding: 0;
         transition: all 0.2s ease-in-out;
