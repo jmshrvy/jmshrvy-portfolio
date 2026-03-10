@@ -856,7 +856,7 @@ header .dark-light-switch-container{
 
 @media(max-width: 768px){
     .grid-container {
-        grid-auto-rows: 5fr .4fr;
+        grid-template-rows: 1fr auto;
         grid-template-areas: 
             "content content content"
             "side side side";
