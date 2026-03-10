@@ -14,7 +14,7 @@
     --color-bg-main: #F0F1EF;
     --color-bg-card: #ffffff;
     --color-bg-sidebar: #ffffff;
-    --background-img: url("../../../public/img/background-light.png");
+    --background-img: url("/img/background-light.png");
 
     /* TEXT */
     --color-text-primary: #000000;
@@ -43,7 +43,7 @@
   --color-bg-main: #000000;
   --color-bg-card: #1A1A1A;
   --color-bg-sidebar: #1A1A1A;
-  --background-img: url("../../../public/img/background-dark.png");
+  --background-img: url("/img/background-dark.png");
 
   --color-text-primary: #ffffff;
   --color-text-secondary: #94a3b8;
