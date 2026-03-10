@@ -859,8 +859,8 @@ header .dark-light-switch-container{
         height: 100dvh;
         grid-template-rows: auto auto;
         grid-template-areas: 
-            "content"
-            "side";
+            "content content"
+            "side side";
         gap: 0;
         padding: 0;
         transition: all 0.2s ease-in-out;
